@@ -40,6 +40,7 @@ router.get('/', authMiddleware, async (req, res) => {
 
 // POST test (Create)
 router.post('/', authMiddleware, async (req, res) => {
+  // patients can request tests
   const { testName, disease } = req.body;
   try {
     // Find a doctor with matching specialization
@@ -50,7 +51,6 @@ router.post('/', authMiddleware, async (req, res) => {
       testName,
       disease,
       patient: req.user.id,
-      doctor: doctor ? doctor._id : null
     });
     await newTest.save();
     res.status(201).json(newTest);
@@ -80,4 +80,3 @@ router.delete('/:id', authMiddleware, async (req, res) => {
 });
 
 module.exports = router;
-

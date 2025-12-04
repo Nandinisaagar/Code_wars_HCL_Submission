@@ -14,15 +14,13 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-logo">
-        <Link to="/">Hospital App</Link>
+        <Link to="/">Medicare</Link>
       </div>
       <div className="nav-links">
         <Link to="/">Home</Link>
         {token ? (
           <>
-            <Link to={role === 'doctor' ? '/doctor-dashboard' : '/dashboard'}>
-              Dashboard
-            </Link>
+            <Link to="/dashboard">Dashboard</Link>
             <button onClick={handleLogout} className="nav-btn">Logout</button>
           </>
         ) : (
