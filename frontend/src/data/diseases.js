@@ -6,4 +6,3 @@ export const diseases = [
   { name: "Diabetes", description: "Blood sugar management and counseling." },
   { name: "Cardiology", description: "Heart health checks and ECG services." }
 ];
-

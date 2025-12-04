@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { reviews } from '../data/Reviews';
 import { diseases } from '../data/diseases';
-
 const Landing = () => {
   return (
     <div className="landing-page">
@@ -15,12 +15,24 @@ const Landing = () => {
       </header>
 
       <section className="services-section">
+        <h2>Our rev</h2>
+        <div className="services-grid">
+          {diseases.map((r) => (
+            <div key={r.name} className="service-card">
+              <h3>{r.name}</h3>
+              <p>{r.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="services-section">
         <h2>Our Services</h2>
         <div className="services-grid">
-          {diseases.map((service) => (
-            <div key={service.name} className="service-card">
-              <h3>{service.name}</h3>
-              <p>{service.description}</p>
+          {reviews.map((r) => (
+            <div key={r.name} className="service-card">
+              <h3>{r.name}</h3>
+              <p>{r.description}</p>
             </div>
           ))}
         </div>
