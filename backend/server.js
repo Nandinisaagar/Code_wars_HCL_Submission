@@ -10,9 +10,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI,)
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.log(err));
+// Only connect to MongoDB if not in test mode
+if (process.env.NODE_ENV !== 'test') {
+  mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.log(err));
+}
 
 app.use('/api/auth', authRoutes);
 app.use('/api/tests', testRoutes);
