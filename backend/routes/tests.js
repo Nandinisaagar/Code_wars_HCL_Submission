@@ -40,14 +40,17 @@ router.get('/', authMiddleware, async (req, res) => {
 
 // POST test (Create)
 router.post('/', authMiddleware, async (req, res) => {
-  // Assuming patients can request tests or doctors can order them. 
-  // For simplicity, let's say patients request tests.
   const { testName, disease } = req.body;
   try {
+    // Find a doctor with matching specialization
+    const User = require('../models/User');
+    const doctor = await User.findOne({ role: 'doctor', specialization: disease });
+
     const newTest = new Test({
       testName,
       disease,
-      patient: req.user.id // If patient creates it
+      patient: req.user.id,
+      doctor: doctor ? doctor._id : null
     });
     await newTest.save();
     res.status(201).json(newTest);

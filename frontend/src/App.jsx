@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
+import DoctorDashboard from './pages/DoctorDashboard';
 import Landing from './pages/Landing';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -25,6 +26,11 @@ function App() {
             <Route path="/dashboard" element={
               <PrivateRoute>
                 <Dashboard />
+              </PrivateRoute>
+            } />
+            <Route path="/doctor-dashboard" element={
+              <PrivateRoute>
+                <DoctorDashboard />
               </PrivateRoute>
             } />
             <Route path="*" element={<Navigate to="/" />} />
