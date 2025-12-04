@@ -43,9 +43,15 @@ router.post('/', authMiddleware, async (req, res) => {
   // patients can request tests
   const { testName, disease } = req.body;
   try {
+    // Find a doctor with matching specialization
+    const User = require('../models/User');
+    const doctor = await User.findOne({ role: 'doctor', specialization: disease });
+
     const newTest = new Test({
       testName,
       disease,
+      patient: req.user.id,
+      doctor: doctor ? doctor._id : null
       patient: req.user.id
     });
     await newTest.save();
