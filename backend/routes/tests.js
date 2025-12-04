@@ -51,8 +51,6 @@ router.post('/', authMiddleware, async (req, res) => {
       testName,
       disease,
       patient: req.user.id,
-      doctor: doctor ? doctor._id : null
-      patient: req.user.id
     });
     await newTest.save();
     res.status(201).json(newTest);
