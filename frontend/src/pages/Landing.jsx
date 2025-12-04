@@ -15,7 +15,7 @@ const Landing = () => {
       </header>
 
       <section className="services-section">
-        <h2>Our rev</h2>
+        <h2>Our Services</h2>
         <div className="services-grid">
           {diseases.map((r) => (
             <div key={r.name} className="service-card">
@@ -27,10 +27,11 @@ const Landing = () => {
       </section>
 
       <section className="services-section">
-        <h2>Our Services</h2>
+        <h2>Our Reviews</h2>
         <div className="services-grid">
           {reviews.map((r) => (
             <div key={r.name} className="service-card">
+              <img className="img-container" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaQ5akOgdIS7LJH6NkOS80iiYe-rrpE_BB_Q&s' />
               <h3>{r.name}</h3>
               <p>{r.description}</p>
             </div>
