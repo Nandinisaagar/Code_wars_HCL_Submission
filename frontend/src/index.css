@@ -237,3 +237,142 @@ button:hover {
   border-radius: 4px;
   margin-top: 10px;
 }
+
+/* Doctor Dashboard */
+.doctor-dashboard {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.dashboard-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.specialization-badge {
+  background: #007bff;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.stats-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.controls-section {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 10px 15px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: #007bff;
+  color: white;
+}
+
+.requests-grid {
+  display: grid;
+  gap: 15px;
+}
+
+.request-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.request-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.patient-name {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.status-pending {
+  background: #ffc107;
+  color: #333;
+}
+
+.status-completed {
+  background: #28a745;
+  color: white;
+}
+
+.result-input-group {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.result-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.update-btn {
+  background: #28a745;
+  color: white;
+}
+
+.delete-request-btn {
+  width: 100%;
+  background: #dc3545;
+  color: white;
+  margin-top: 10px;
+}

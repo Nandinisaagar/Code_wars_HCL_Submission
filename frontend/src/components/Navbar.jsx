@@ -20,7 +20,9 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         {token ? (
           <>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to={role === 'doctor' ? '/doctor-dashboard' : '/dashboard'}>
+              Dashboard
+            </Link>
             <button onClick={handleLogout} className="nav-btn">Logout</button>
           </>
         ) : (

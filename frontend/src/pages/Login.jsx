@@ -23,7 +23,13 @@ const Login = () => {
         localStorage.setItem('token', data.token);
         localStorage.setItem('role', data.role);
         localStorage.setItem('specialization', data.specialization || '');
-        navigate('/dashboard');
+
+        // Redirect based on role
+        if (data.role === 'doctor') {
+          navigate('/doctor-dashboard');
+        } else {
+          navigate('/dashboard');
+        }
       } else {
         setError(data.message);
       }
